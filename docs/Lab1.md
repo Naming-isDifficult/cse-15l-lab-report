@@ -18,7 +18,7 @@ sudo apt install /path/to/deb_file
 
 ## After Installation
 If everything goes on right, run VScode and you should be able to see something like this (except for that girl):
-![image](VScode.png)
+![image](../Lab1/VScode.png)
 
 ## Connect to remote machine
 ### Changing password
@@ -36,8 +36,8 @@ For the course I'm taking, the remote server URL is:
 ieng6@ucsd.edu
 ```
 Follow instructions on the screen to establish connection. You should be able to see something like this if you success:
-![image](Connection.png)
+![image](../Lab1/Connection.png)
 
 ## Try some command
 Well, nothing to say here to be honest...
-![image](Command.png)
+![image](../Lab1/Command.png)
