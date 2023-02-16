@@ -5,6 +5,8 @@
 1. ```grep -r``` or ```grep --recursive```<br>
 By applying this option, grep will go over all files under given directory and subdirectories recursively. However, it will ignore symlinks. This command is useful because we don't need to first use either find or some other command to first list all files before using grep.<br>
     - In the following code block, the command is trying to find all files containing string "Bahamas" under current directory and subdirectories.
+
+
     ```
     [name@ieng6-201]:skill-demo1-data:343$ grep -r "Bahamas" .
     Binary file ./.git/index matches
@@ -14,20 +16,28 @@ By applying this option, grep will go over all files under given directory and s
 
     #and more...
     ```
+
     - In the following code block, the command is trying to find all files containing string "Haha" under current directory and subdirectories.
+
+
     ```
     [name@ieng6-201]:skill-demo1-data:344$ grep -r "Haha" .
     ./written_2/non-fiction/OUP/Kauffman/ch6.txt:Do you think you could finitely prestate all the context-dependent causal consequences of human artifacts that might turn out to be useful in some odd environment or for some odd purpose? I don’t think so. It is not that we cannot finitely prestate some infinite things. For example, Fourier had a wonderful idea. “Sine and cosines, you know,” he muttered to himself in French. “All possible wavelengths, out to infinity, down to infinitesimal, all possible phase oVsets.   .   .   . Haha!” And Fourier proved his theorem that any wiggly line on a plane surface could be approximated to arbitrary accuracy with a weighted set of phase-oVset sines and cosines drawn from the infinite basis set of all sine and cosine functions. Fourier finitely prestated an infinite basis set for all continuous diVerentiable wiggly lines on long blackboards.
     ```
 
-2. ```grep -n``` or ```grep --line-number```<br>
+1. ```grep -n``` or ```grep --line-number```<br>
 By applying this option, grep will not only out put the context of the matched string but also where (or which line) it is. It will be super useful when we not only want to know which file contains that string but also want to know where the string is.<br>
     - In the following code block, the command is trying to find all files containing string "Haha" under current directory and subdirectories and show the position.
+
+
     ```
     [name@ieng6-201]:skill-demo1-data:346$ grep -n -r "Haha" .
     ./written_2/non-fiction/OUP/Kauffman/ch6.txt:91:Do you think you could finitely prestate all the context-dependent causal consequences of human artifacts that might turn out to be useful in some odd environment or for some odd purpose? I don’t think so. It is not that we cannot finitely prestate some infinite things. For example, Fourier had a wonderful idea. “Sine and cosines, you know,” he muttered to himself in French. “All possible wavelengths, out to infinity, down to infinitesimal, all possible phase oVsets.   .   .   . Haha!” And Fourier proved his theorem that any wiggly line on a plane surface could be approximated to arbitrary accuracy with a weighted set of phase-oVset sines and cosines drawn from the infinite basis set of all sine and cosine functions. Fourier finitely prestated an infinite basis set for all continuous diVerentiable wiggly lines on long blackboards.
     ```
+
     - In the following code block, the command is trying to find all files containing string "Beautiful" under current directory and subdirectories and show the position.
+
+
     ```
     [name@ieng6-201]:skill-demo1-data:347$ grep -n -r "Beautiful" .
     ./written_2/non-fiction/OUP/Castro/chM.txt:77:Mexico Lindo (Beautiful Mexico)
@@ -46,30 +56,40 @@ By applying this option, grep will not only out put the context of the matched s
     # and more...
     ```
 
-3. ```grep -q``` or ```grep --quiet``` or ```grep --silent```<br>
+1. ```grep -q``` or ```grep --quiet``` or ```grep --silent```<br>
 By applying this option, normal output will be suppressed. The command will end immediately after execution with exit code 0 if there is at least one file containing matched string. If no matchings are found, the exit code will be 1. This will be usefule if we want to determine if the given file contains a certain string. <br>
     - In the following code block, the command is trying to determine if the file ```./written_2/non-fiction/OUP/Kauffman/ch6.txt``` contains string "Haha" or not. Exit code 0 means the answer is yes.
+
+
     ```
     [name@ieng6-201]:skill-demo1-data:358$ grep -q "Haha" ./written_2/non-fiction/OUP/Kauffman/ch6.txt
     [name@ieng6-201]:skill-demo1-data:359$ echo $?
     0
     ```
+
     - In the following code block, the command is trying to determine if the file ```./written_2/non-fiction/OUP/Kauffman/ch6.txt``` contains string "qwert" or not. Exit code 1 means the answer is no.
+
+
     ```
     [name@ieng6-201]:skill-demo1-data:360$ grep -q "qwert" ./written_2/non-fiction/OUP/Kauffman/ch6.txt
     [name@ieng6-201]:skill-demo1-data:361$ echo $?
     1
     ```
 
-4. ```grep -e``` or ```grep --regexp```<br>
+1. ```grep -e``` or ```grep --regexp```<br>
 By applying this option, grep will interpret the input string as a regular expression. This will be extremely useful when we are trying to match strings with a certain pattern (e.g. email address). However, I cannot come up with a good use on given dataset.
     - In the following code block, the command is trying to find files containing email address like strings. As expected, we cannot find any.
+
+
     ```
     [name@ieng6-201]:skill-demo1-data:364$ grep -q -r -e "[a-zA-Z0-9._] +@ [a-zA-Z]+. [a-zA-Z]+" .
     [name@ieng6-201]:skill-demo1-data:365$ echo $?
     1
     ```
+
     - In the following code block, the command is trying to find files containing standard 10-digit phone number like strings.
+
+
     ```
     [name@ieng6-201]:skill-demo1-data:368$ grep -r -e "\(\(([0-9]\{3\})\|[0-9]\{3\}\)[ -]\?\)\{2\}[0-9]\{4\}" .
     ./written_2/non-fiction/OUP/Berk/ch7.txt:Because of wide individual differences, it’s sometimes hard to tell a language disorder from normal variation in language development. If you’re concerned about your child’s language progress, consult a trained speech–language pathologist. The American Speech–Language–Hearing Association (ASHA) maintains a list of certiﬁed speech–language pathologists for referrals. You can contact the association at (800) 638-8255.
