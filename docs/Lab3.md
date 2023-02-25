@@ -82,7 +82,7 @@ By applying this option, grep will interpret the input string as a regular expre
 
 
     ```
-    [name@ieng6-201]:skill-demo1-data:364$ grep -q -r -e "[a-zA-Z0-9._] +@ [a-zA-Z]+. [a-zA-Z]+" .
+    [name@ieng6-201]:skill-demo1-data:364$ grep -q -r -e "[a-zA-Z0-9._] \{1\}@ [a-zA-Z]\{1\}. [a-zA-Z]\{1\}" .
     [name@ieng6-201]:skill-demo1-data:365$ echo $?
     1
     ```
@@ -99,3 +99,6 @@ By applying this option, grep will interpret the input string as a regular expre
 
     #and more...
     ```
+    
+    ## Reference
+    [1] [GNU Grep 3.8](https://www.gnu.org/software/grep/manual/grep.html)
