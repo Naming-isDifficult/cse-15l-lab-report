@@ -100,5 +100,5 @@ By applying this option, grep will interpret the input string as a regular expre
     #and more...
     ```
     
-    ## Reference
-    [1] [GNU Grep 3.8](https://www.gnu.org/software/grep/manual/grep.html)
+## Reference
+[1] [GNU Grep 3.8](https://www.gnu.org/software/grep/manual/grep.html)
