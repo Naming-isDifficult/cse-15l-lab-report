@@ -1,4 +1,4 @@
-# Week 2 Lab Report
+# Lab Report 2
 
 ## **Part 1**
 ### Code for my <font face='Courier New'>StringServer</font>

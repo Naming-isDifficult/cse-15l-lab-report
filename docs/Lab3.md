@@ -1,4 +1,4 @@
-# Week 3 Lab Report
+# Lab Report 3
 
 ## Interesting command-line options for ```grep``` command
 

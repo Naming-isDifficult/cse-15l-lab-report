@@ -1,4 +1,4 @@
-# Week 4 Lab Report
+# Lab Report 4
 
 ## Step 0: Preparing
 ![image](../Lab4/Step1.png)

@@ -1,4 +1,4 @@
-# Week 1 Lab Report
+# Lab Report 1
 For future me...
 
 ## Installing VScode (Windows)
